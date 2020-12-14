@@ -29,21 +29,9 @@ function runEnter() {
     var list = d3.select("#tablebody");
     list.html("");
     setuptable(filteredData);
-
-        /*filteredData.forEach(function(element) {
-           console.log(element);
-           var row = list.append("tr");
-           Object.entries(element).forEach(function([key, value]) {
-                console.log(key, value);
-
-                //Append a cell to the row for each value
-                var cell = row.append("td");
-                cell.text(value);
-            });
-        }); */
-    
       
 };
+
 function setuptable(somedata) {
 
     somedata.forEach(function(element) {
