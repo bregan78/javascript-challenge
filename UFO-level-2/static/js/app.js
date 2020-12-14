@@ -26,6 +26,19 @@ function runEnter() {
 
     var cityinputValue = inputElement2.property("value");
 
+    var inputElement3 = d3.select("#state");
+
+    var stateinputValue = inputElement3.property("value");
+
+
+    var inputElement4 = d3.select("#country");
+
+    var countryinputValue = inputElement4.property("value");
+
+    var inputElement5 = d3.select("#shape");
+
+    var shapeinputValue = inputElement5.property("value");
+
 
     //console.log(inputValue);
     //console.log(tableData);
@@ -43,7 +56,7 @@ function runEnter() {
         
     };
 
-    console.log(cityinputValue);
+    //console.log(cityinputValue);
 
     if (cityinputValue) {
 
@@ -54,12 +67,45 @@ function runEnter() {
         var filteredData2 = filteredData;
         
     };
-    console.log(cityinputValue);
+
+    if (stateinputValue) {
+
+        var filteredData3 = filteredData2.filter(sighting => sighting.state === stateinputValue);
+    }
+
+    else {
+        var filteredData3 = filteredData2;
+        
+    };
+
+    if (countryinputValue) {
+
+        var filteredData4 = filteredData3.filter(sighting => sighting.country === countryinputValue);
+    }
+
+    else {
+        var filteredData4 = filteredData3;
+        
+    };
+
+    if (shapeinputValue) {
+
+        var filteredData5 = filteredData4.filter(sighting => sighting.shape === shapeinputValue);
+    }
+
+    else {
+        var filteredData5 = filteredData4;
+        
+    };
+
+
+
+    //console.log(cityinputValue);
     //var filteredData2 = filteredData.filter(sighting => sighting.city === inputValue2);
 
     var list = d3.select("#tablebody");
     list.html("");
-    setuptable(filteredData2);
+    setuptable(filteredData5);
       
 };
 
